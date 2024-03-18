@@ -1,22 +1,12 @@
 import { useEffect } from "react";
 import NavBar from './navBar';
-
 let Index = () => {
-
-    useEffect( () => {
-
-
-
+    useEffect(() => {
     }, [])
-
     return (
-
         <>
             <NavBar />
-            
         </>
-
     )
 }
-
 export default Index;

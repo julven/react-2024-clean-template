@@ -2,32 +2,19 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { deletesList } from "./redux";
-
-
 let ListView = () => {
-
     let [person, setPerson] = useState({})
     let param = useParams();
     let navigate = useNavigate()
     let dispatch = useDispatch()
-
     let thePerson = useSelector(state => state.list.value).find(x => x.id === param.id)
-
     useEffect( () => {
-
-        //console.log(thePerson)
         if(thePerson) setPerson(thePerson)
-
         else navigate("/list")
-
     }, [])
-
     let edit = id => {
-
-        console.log(id);
         navigate("/list/edit/"+id)
     }
-
     let deletePerson = (id) => {
         let conf = window.confirm("Delete this person?")
         if(conf) {
@@ -36,10 +23,7 @@ let ListView = () => {
             navigate("/list")
         }   
    }
-
-
     return (
-
         <>
             <h1>List View</h1>
             <table>
@@ -63,17 +47,13 @@ let ListView = () => {
                     <tr>
                         <th>Gender</th>
                         <td>{person.gender}</td>
-                    </tr>
-                   
+                    </tr>  
                 </tbody>
             </table>
-
             <button onClick={() => edit(person.id)}>Edit</button>
             <button onClick={() => deletePerson(person.id)}>Delete</button>
             <button onClick={() => navigate(-1)}>back</button>
         </>
-
     )
 }
-
 export default ListView;

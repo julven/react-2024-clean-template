@@ -1,16 +1,12 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { context } from "./context";
-import {  useSelector } from "react-redux";
-
+import { useSelector } from "react-redux";
 let Home = () => {
-
-    let {AccountContext} = context;
-    let {account} = useContext(AccountContext);
+    let { AccountContext } = context;
+    let { account } = useContext(AccountContext);
     let list = useSelector(state => state.list.value)
-
     return (
-
         <>
             <h1>Home</h1>
             <table>
@@ -26,8 +22,6 @@ let Home = () => {
                 </tbody>
             </table>
         </>
-
     )
 }
-
 export default Home;

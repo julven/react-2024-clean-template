@@ -3,12 +3,8 @@ import Index from './hooks/index';
 import { Provider } from 'react-redux';
 import { store } from './hooks/redux';
 import {context} from './hooks/context';
-
-
 function App() {
-
   let {AccountContextProvider} = context
-
   return (
     <AccountContextProvider>
       <Provider store={store}>
@@ -19,5 +15,4 @@ function App() {
     </AccountContextProvider>
   );
 }
-
 export default App;
