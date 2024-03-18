@@ -26,6 +26,7 @@ let NavBar = () => {
                 <li><Link to="/list">List</Link></li>
                 <li><Link to="/account">Account</Link></li>
             </ul>
+            {/* <Outlet/> */}
             <Routes>
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/list">
@@ -43,7 +44,6 @@ let NavBar = () => {
                 </Route>
                 <Route path="*" element={<div>Page not found</div>} />
             </Routes>
-            <Outlet />
         </>
     )
 }
