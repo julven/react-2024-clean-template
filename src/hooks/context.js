@@ -8,6 +8,7 @@ let AccountContextProvider = ({ children }) => {
         gender: "male"
     })
     let [logged, setLogged] = useState(false);
+    let [prevLink, setPrevLink] = useState("/")
     let fieldCheck = (data) => {
         let valid = true;
         Object.keys(data).forEach((x, i) => {
@@ -17,7 +18,7 @@ let AccountContextProvider = ({ children }) => {
         return true;
     }
     return (
-        <AccountContext.Provider value={{ account, setAccount, fieldCheck, logged, setLogged }}>
+        <AccountContext.Provider value={{ account, setAccount, fieldCheck, logged, setLogged, prevLink, setPrevLink }}>
             {children}
         </AccountContext.Provider>
     )
