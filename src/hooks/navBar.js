@@ -31,6 +31,7 @@ let NavBar = () => {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/list">
                     <Route index element={<List />} />
+                    <Route path=":search" element={<List />} />
                     <Route path="view/:id" element={<ListView />} />
                     <Route element={<NavGuard />}>
                         <Route path="add" element={<ListAdd />} />

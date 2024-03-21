@@ -4,16 +4,11 @@ import { useNavigate } from "react-router";
 let AccountLogin = () => {
     let { AccountContext } = context;
     let { setLogged, prevLink } = useContext(AccountContext);
-
     let navigate = useNavigate()
-
     let login = () => {
         setLogged(true)
-        // console.log(location)
-        navigate(prevLink)
-        
+        navigate(prevLink)      
     }
-
     return (
         <>
             Click button to login.

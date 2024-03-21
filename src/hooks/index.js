@@ -7,8 +7,7 @@ let Index = () => {
     let location = useLocation()
     let  {AccountContext} = context
     let {setPrevLink} = useContext(AccountContext)
-    useEffect(() => {
-        
+    useEffect(() => {  
         if(!location.pathname.includes("/login")) {
             setPrevLink(location.pathname);
             console.log(location.pathname)

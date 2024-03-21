@@ -1,6 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 let randId = () => Math.random().toString(36).substring(8);
-
 let reduxList = {
     value: [
         { fname: "julven", lname: "condor", bday: "1990-07-07", gender: "male", id: randId() },
