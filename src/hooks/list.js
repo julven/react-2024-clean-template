@@ -11,7 +11,11 @@ let List = () => {
     let dispatch = useDispatch()
     useEffect(() => {
         console.log(param)
-        filterList()
+        if(param.search) {
+            setList(copy.filter(x =>  x.fname.includes(param.search) || x.lname.includes(param.search)))
+            setSearch(param.search)
+        }
+        else setList([...copy])
     }, [])
     let goTo = () => {
         dispatch(resetPerson())
@@ -23,8 +27,7 @@ let List = () => {
             navigate("/list/"+search)  
         }
         else {
-            setList([...copy])
-            resetSearch()
+           resetSearch()
         }   
     }
     let resetSearch = () => {
